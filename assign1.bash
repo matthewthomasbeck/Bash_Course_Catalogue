@@ -78,7 +78,7 @@ while true; do # display the menu until CTRL-D is pressed
 
         *) # if user input is invalid...
 
-            echo "ERROR: select a valid response" # throw invalid input error
+            echo -e "ERROR: select a valid response\n" # throw invalid input error
             ;;
     esac
 done

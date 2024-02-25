@@ -28,6 +28,8 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
     read -p "Enter department code: " input # take input from user
 
+    input=$(echo "$input" | tr '[:lower:]' '[:upper:]') # convert the string with unix utility to uppercase
+
     if [[ "$input" =~ ^[[:alnum:]]{2,3}$ ]]; then # if input is a valid 2-3 character string...
 
         dept_code=$input # take valid input from user
@@ -75,6 +77,8 @@ isValid=false # initialize as false (functionality inspired by Dr. Gomez's Progr
 while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
     read -p "Enter course schedule: " input # take input from user
+
+    input=$(echo "$input" | tr '[:lower:]' '[:upper:]') # convert the string with unix utility to uppercase
 
     if [[ "$input" == "MWF" || "$input" == "TH" ]]; then # if input is correct string MWF or TH...
 
@@ -183,3 +187,23 @@ echo "initial course enrollment: $initial_enrollment"
 
 
 ########## FILE OUTPUT ##########
+
+##### create file #####
+
+course_file="${dept_code}${course_num}.txt" # declare file to store course data
+
+data_folder="data" # set directory to store file
+
+mkdir -p "$data_folder"  # make data directory to avoid annoying 'nO sUcH fIlE oR dIrEcToRy' bs
+
+##### fill file #####
+
+# move data into course file (trick I picked up from Python, use \ if your code line is too long)
+echo -e "$dept_code $dept_name\n$course_name\n$course_sched $start_date $end_date\n$credit_hours\n$initial_enrollment" >\
+"$course_file"
+
+##### export file #####
+
+mv "$course_file" "$data_folder/" # move course data file to data directory
+
+echo -e "\n" # print new line for legibility
