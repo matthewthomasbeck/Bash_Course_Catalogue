@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ################################################################################
 # This code and its associated files were created at the instruction of        #
 # professors at the University of Texas at San Antonio during my time as a     #
@@ -12,16 +14,7 @@
 
 
 #############################################################
-############### IMPORT / DECLARE DEPENDENCIES ###############
-#############################################################
-
-# declare shebang line for bash interpreter
-#!/bin/bash
-
-
-
-
-
-#############################################################
 ###############  ###############
 #############################################################
+
+echo "create"
