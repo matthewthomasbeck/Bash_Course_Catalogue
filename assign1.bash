@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# NOTE: I usually end my script files with the .sh extension out of habit, but refrained from doing that here, apologies
+# if I did something I am not supposed to; trying to memorize what I can and can not do yet is challenging, and
+# meticulously going through every slide in the lecture notes, while advisable, takes days (but I did try to follow the
+# instructions to a T)
+
 ################################################################################
 # This code and its associated files were created at the instruction of        #
 # professors at the University of Texas at San Antonio during my time as a     #
@@ -43,42 +48,30 @@ while true; do # display the menu until CTRL-D is pressed
 
         C|c) # if user wants to create a course record...
 
-            #echo "ERROR: awaiting functionality" # no functionality error statement
-
             ./create.bash # call create.bash to create course record
             ;;
 
         R|r) # if user wants to read a course record...
-
-            #echo "ERROR: awaiting functionality" # no functionality error statement
 
             ./read.bash # call read.bash to read a course record
             ;;
 
         U|u) # if user wants to update a course record...
 
-            #echo "ERROR: awaiting functionality" # no functionality error statement
-
             ./update.bash # call update.bash to update a course record
             ;;
 
         D|d) # if user wants to delete a course record...
-
-            #echo "ERROR: awaiting functionality" # no functionality error statement
 
             ./delete.bash # call delete.bash to delete a course record
             ;;
 
         E|e) # if user wants to update enrolled student count of a course...
 
-            #echo "ERROR: awaiting functionality" # no functionality error statement
-
             ./enroll.bash # call enroll.bash to update enrolled student count
             ;;
 
         T|t) # if user wants to see course count...
-
-            #echo "ERROR: awaiting functionality" # no functionality error statement
 
             ./total.bash # call total.bash to show total course count
             ;;
