@@ -201,11 +201,13 @@ if [ ! -e "$course_file" ]; then # if course has not been created...
                 y|Y) # if user selects yes...
 
                     echo -e "\nCreated $course_file\n" # print course creation statement
+
+                    exit 0 # close process
                     ;;
 
                 n|N) # if user selects no...
 
-                    ./assign1.bash # send user back to main menu
+                    exit 0 # close process
                     ;;
             esac
 
@@ -246,4 +248,4 @@ echo "[$(date)] UPDATED: $dept_code $course_num $course_name" >> data/queries.lo
 
 ##### return to main menu #####
 
-./assign1.bash # send user back to main menu
+exit 0 # close process

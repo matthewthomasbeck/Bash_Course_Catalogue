@@ -109,7 +109,7 @@ else # if file has been found...
 
                 n|N) # if user selects no...
 
-                    ./assign1.bash # send user back to main menu
+                    exit 0 # close process
                     ;;
             esac
 
@@ -148,4 +148,4 @@ echo "[$(date)] DELETED: $dept_code $course_num $course_name" >> data/queries.lo
 
 ##### return to main menu #####
 
-./assign1.bash # send user back to main menu
+exit 0 # close process

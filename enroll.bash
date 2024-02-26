@@ -30,4 +30,4 @@ read # eat input until code finished
 
 ##### return to main menu #####
 
-./assign1.bash # send user back to main menu
+exit 0 # close process

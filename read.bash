@@ -71,11 +71,13 @@ if [ ! -e "$course_file" ]; then # if file has not been found...
                 y|Y) # if user selects yes...
 
                     ./read.bash # recursively call the script to restart the process
+
+                    exit 0 # close process
                     ;;
 
                 n|N) # if user selects no...
 
-                    ./assign1.bash # send user back to main menu
+                    exit 0 # close process
                     ;;
             esac
 
@@ -113,4 +115,4 @@ done < "$course_file"
 
 ##### return to main menu #####
 
-./assign1.bash # send user back to main menu
+exit 0 # close process
