@@ -20,9 +20,9 @@
 
 ########## USER INPUT ##########
 
-##### department code #####
+##### dept_code code #####
 
-isValid=false # initialize as false (functionality inspired by Dr. Gomez's Programming I Project I)
+isValid=false # initialize as false
 
 while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
@@ -30,7 +30,8 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
     read -p "Enter department code: " input # take input from user
 
-    input=$(echo "$input" | tr '[:lower:]' '[:upper:]') # convert the string with unix utility to uppercase
+    input=$(echo "$input" | tr '[:upper:]' '[:lower:]') # convert the string with unix utility to lowercase
+    # I attempted to use input="${input,,}" but could not get that to work
 
     if [[ "$input" =~ ^[[:alnum:]]{2,3}$ ]]; then # if input is a valid 2-3 character string...
 
@@ -46,7 +47,7 @@ done
 
 ##### course number #####
 
-isValid=false # initialize as false (functionality inspired by Dr. Gomez's Programming I Project I)
+isValid=false # initialize as false
 
 while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
@@ -67,19 +68,13 @@ done
 
 ########## SEARCH FOR FILE ##########
 
-course_file="data/${dept_code}${course_num}.txt" # build file path needed for 'search engine' functionality
+course_file="data/${dept_code}${course_num}.crs" # build file path needed for 'search engine' functionality
 
-if [ -e "$course_file" ]; then # if file has been found...
-
-    course_object=$(<"$course_file") # read the contents of the file path to usable object that I can play with later :)
-
-    echo "File found: $course_file" # print that the file has been found
-
-else # if file has not been found (does not exist or entered wrong)...
+if [ ! -e "$course_file" ]; then # if file has not been found...
 
     echo -e "\nERROR: course not found\n" # print course not found error statement
 
-    isValid=false # initialize as false (functionality inspired by Dr. Gomez's Programming I Project I)
+    isValid=false # initialize as false
 
     while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
@@ -112,4 +107,29 @@ fi
 
 ########## READ FILE ##########
 
-echo -e "$course_object\n" # print course contents
+while read line; do # loop through the entire contents of the course file
+
+    ##### read values #####
+
+    read dept_code dept_name <<< "$line" # take code and dept name from first line with here string
+    read course_name # take course name from second line
+    read course_sched course_start course_end # take schedule start and end from third line
+    read credit_hours # take hours from fourth line
+    read initial_enrollment # take population from fifth line
+
+    ##### print values #####
+
+    echo -e "\nCourse department:    $dept_code $dept_name" # print dept code and name
+    echo "Course number:    $course_num" # print class num
+    echo "Course name:    $course_name" # print class name
+    echo "Scheduled days:    $course_sched" # print days to go to class
+    echo "Course start:    $course_start" # print first class day
+    echo "Course end:    $course_end" # print last class day
+    echo "Credits:    $credit_hours" # print credit hours
+    echo -e "Capacity:    $initial_enrollment\n" # print num students
+
+done < "$course_file"
+
+##### return to main menu #####
+
+./assign1.bash # send user back to main menu

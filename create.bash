@@ -22,14 +22,16 @@
 
 ##### department code #####
 
-isValid=false # initialize as false (functionality inspired by Dr. Gomez's Programming I Project I)
+isValid=false # initialize as false
 
 while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
-    echo ""  # add space
+    echo "" # add space
+
     read -p "Enter department code: " input # take input from user
 
-    input=$(echo "$input" | tr '[:lower:]' '[:upper:]') # convert the string with unix utility to uppercase
+    input=$(echo "$input" | tr '[:upper:]' '[:lower:]') # convert the string with unix utility to lowercase
+    # I attempted to use input="${input,,}" but could not get that to work
 
     if [[ "$input" =~ ^[[:alnum:]]{2,3}$ ]]; then # if input is a valid 2-3 character string...
 
@@ -49,7 +51,7 @@ read -p "enter department name: " dept_name # ask for dept name and save
 
 ##### course number #####
 
-isValid=false # initialize as false (functionality inspired by Dr. Gomez's Programming I Project I)
+isValid=false # initialize as false
 
 while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
@@ -73,13 +75,14 @@ read -p "enter course name: " course_name # ask for course name and save
 
 ##### course schedule #####
 
-isValid=false # initialize as false (functionality inspired by Dr. Gomez's Programming I Project I)
+isValid=false # initialize as false
 
 while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
     read -p "Enter course schedule: " input # take input from user
 
     input=$(echo "$input" | tr '[:lower:]' '[:upper:]') # convert the string with unix utility to uppercase
+    # I attempted to use input="${input^^}" but could not get that to work
 
     if [[ "$input" == "MWF" || "$input" == "TH" ]]; then # if input is correct string MWF or TH...
 
@@ -95,7 +98,7 @@ done
 
 ##### start date #####
 
-isValid=false # initialize as false (functionality inspired by Dr. Gomez's Programming I Project I)
+isValid=false # initialize as false
 
 while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
@@ -115,7 +118,7 @@ done
 
 ##### end date #####
 
-isValid=false # initialize as false (functionality inspired by Dr. Gomez's Programming I Project I)
+isValid=false # initialize as false
 
 while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
@@ -135,7 +138,7 @@ done
 
 ##### credit hours #####
 
-isValid=false # initialize as false (functionality inspired by Dr. Gomez's Programming I Project I)
+isValid=false # initialize as false
 
 while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
@@ -155,7 +158,7 @@ done
 
 ##### initial enrollment #####
 
-isValid=false # initialize as false (functionality inspired by Dr. Gomez's Programming I Project I)
+isValid=false # initialize as false
 
 while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
@@ -173,31 +176,61 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
     fi
 done
 
-##### test #####
 
-# test to show data
-echo "department code: $dept_code"
-echo "department name: $dept_name"
-echo "course number: $course_num"
-echo "course name: $course_name"
-echo "course schedule: $course_sched"
-echo "course start date: $start_date"
-echo "course end date: $end_date"
-echo "course credit hours: $credit_hours"
-echo "initial course enrollment: $initial_enrollment"
+########## SEARCH FOR FILE ##########
+
+course_file="data/${dept_code}${course_num}.txt" # build file path needed for 'search engine' functionality
+
+if [ -e "$course_file" ]; then # if course has already been created...
+
+    echo -e "\nERROR: course already exists\n" # print course created error statement
+
+    isValid=false # initialize as false
+
+    while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
+
+        # ask for failure course of action
+        read -p "Want to continue? (enter yes: (y, Y), no: (n, N)): " input
+
+        if [[ "$input" =~ ^[yYnN]$ ]]; then # if user enters correct yes/no input of any kind...
+
+            isValid=true # break the loop
+
+            case $input in # yes/no case (inspired by my work with switch statements in python for Receipt_Analyzer_3.0)
+
+                y|Y|yes|Yes) # if user selects yes...
+
+                    ./create.bash # recursively call the script to restart the process
+                    ;;
+
+                n|N|no|No) # if user selects no...
+
+                    ./assign1.bash # send user back to main menu
+                    ;;
+            esac
+
+        else # if user doess not enter correct yes/no input...
+
+            echo -e "\nERROR: invalid input (enter yes: (y, Y), no: (n, N))\n" # print error statement
+        fi
+    done
+fi
 
 
 ########## FILE OUTPUT ##########
 
 ##### create file #####
 
-course_file="${dept_code}${course_num}.txt" # declare file to store course data
+course_file="${dept_code}${course_num}.crs" # declare file to store course data
 
 data_folder="data" # set directory to store file
 
 mkdir -p "$data_folder"  # make data directory to avoid annoying 'nO sUcH fIlE oR dIrEcToRy' bs
 
 ##### fill file #####
+
+dept_code=$(echo "$dept_code" | tr '[:lower:]' '[:upper:]') # department code to uppercase for the file
+# I attempted to use dept_code="${dept_code^^}" but could not get that to work
 
 # move data into course file (trick I picked up from Python, use \ if your code line is too long)
 echo -e "$dept_code $dept_name\n$course_name\n$course_sched $start_date $end_date\n$credit_hours\n$initial_enrollment" >\
@@ -208,3 +241,11 @@ echo -e "$dept_code $dept_name\n$course_name\n$course_sched $start_date $end_dat
 mv "$course_file" "$data_folder/" # move course data file to data directory
 
 echo -e "\n" # print new line for legibility
+
+##### update log #####
+
+echo "[$(date)] CREATED: $dept_code $course_num $course_name" >> data/queries.log # update the log
+
+##### return to main menu #####
+
+./assign1.bash # send user back to main menu
