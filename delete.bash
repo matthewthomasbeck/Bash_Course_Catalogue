@@ -86,39 +86,39 @@ if [ ! -e "$course_file" ]; then # if file has not been found...
         fi
     done
 
-#else # if file has been found...
+else # if file has been found...
 
-    #isValid=false # initialize as false
+    isValid=false # initialize as false
 
-    #while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
+    while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
-        #echo "" # add space
+        echo "" # add space
 
         # ask for deletion course of action
-        #read -p "Course found, are you sure you want to delete? (enter yes: (y, Y), no: (n, N)): " input
+        read -p "Course found, are you sure you want to delete? (enter yes: (y, Y), no: (n, N)): " input
 
-        #if [[ "$input" =~ ^[yYnN]$ ]]; then # if user enters correct yes/no input of any kind...
+        if [[ "$input" =~ ^[yYnN]$ ]]; then # if user enters correct yes/no input of any kind...
 
-            #isValid=true # break the loop
+            isValid=true # break the loop
 
-            #case $input in # yes/no case (inspired by my work with switch statements in python for Receipt_Analyzer_3.0)
+            case $input in # yes/no case (inspired by my work with switch statements in python for Receipt_Analyzer_3.0)
 
-                #y|Y|yes|Yes) # if user selects yes...
+                y|Y|yes|Yes) # if user selects yes...
 
-                    #echo -e "\nDeleted $course_file\n" # print course deletion statement
-                    #;;
+                    echo -e "\nDeleted $course_file\n" # print course deletion statement
+                    ;;
 
-                #n|N|no|No) # if user selects no...
+                n|N|no|No) # if user selects no...
 
-                    #./assign1.bash # send user back to main menu
-                    #;;
-            #esac
+                    ./assign1.bash # send user back to main menu
+                    ;;
+            esac
 
-        #else # if user doess not enter correct yes/no input...
+        else # if user doess not enter correct yes/no input...
 
-            #echo -e "\nERROR: invalid input (enter yes: (y, Y), no: (n, N))\n" # print error statement
-        #fi
-    #done
+            echo -e "\nERROR: invalid input (enter yes: (y, Y), no: (n, N))\n" # print error statement
+        fi
+    done
 fi
 
 
