@@ -22,9 +22,9 @@
 
 ##### department code and course number #####
 
-isValid=false # initialize as false
+valid=false # initialize as false
 
-while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
+while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
     echo "" # add space to make good looking
 
@@ -37,7 +37,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
     # if both department code and course number are valid...
     if [[ "$dept_code" =~ ^[[:alnum:]]{2,3}$ ]] && [[ "$course_num" =~ ^[0-9]+$ && ${#course_num} -eq 4 ]]; then
 
-        isValid=true # break the loop
+        valid=true # break the loop
 
     else # if either department code or course number is not valid...
 
@@ -56,16 +56,16 @@ if [ ! -e "$course_file" ]; then # if file has not been found...
 
     echo -e "\nERROR: course not found\n" # print course not found error statement
 
-    isValid=false # initialize as false
+    valid=false # initialize as false
 
-    while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
+    while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
         # ask for failure course of action
         read -p "Want to continue? (enter yes: (y, Y), no: (n, N)): " input
 
         if [[ "$input" =~ ^[yYnN]$ ]]; then # if user enters correct yes/no input of any kind...
 
-            isValid=true # break the loop
+            valid=true # break the loop
 
             case $input in # yes/no case (inspired by my work with switch statements in python for Receipt_Analyzer_3.0)
 

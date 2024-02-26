@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35575ed6-fd66-44a8-95cf-60f5ae43b539" name="Changes" comment="completed total.bash, started enroll.bash">
-      <change afterPath="$PROJECT_DIR$/data/cs3423.crs" afterDir="false" />
+    <list default="true" id="35575ed6-fd66-44a8-95cf-60f5ae43b539" name="Changes" comment="Whatever, barely works with the input file, might as well double down on making my code fancy like before&#10;¯\_(ツ)_/¯">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assign1.bash" beforeDir="false" afterPath="$PROJECT_DIR$/assign1.bash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create.bash" beforeDir="false" afterPath="$PROJECT_DIR$/create.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/abc1234.crs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cs3824.crs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/queries.log" beforeDir="false" afterPath="$PROJECT_DIR$/data/queries.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delete.bash" beforeDir="false" afterPath="$PROJECT_DIR$/delete.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/enroll.bash" beforeDir="false" afterPath="$PROJECT_DIR$/enroll.bash" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/read.bash" beforeDir="false" afterPath="$PROJECT_DIR$/read.bash" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/update.bash" beforeDir="false" afterPath="$PROJECT_DIR$/update.bash" afterDir="false" />
     </list>
@@ -42,26 +37,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Shell Script.assign1.bash.executor": "Run",
-    "Shell Script.create.bash.executor": "Run",
-    "Shell Script.delete.bash.executor": "Run",
-    "Shell Script.read.bash.executor": "Run",
-    "Shell Script.update.bash.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Shell Script.assign1.bash.executor&quot;: &quot;Run&quot;,
+    &quot;Shell Script.create.bash.executor&quot;: &quot;Run&quot;,
+    &quot;Shell Script.delete.bash.executor&quot;: &quot;Run&quot;,
+    &quot;Shell Script.read.bash.executor&quot;: &quot;Run&quot;,
+    &quot;Shell Script.update.bash.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -70,7 +65,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708886043061</updated>
-      <workItem from="1708886044195" duration="29618000" />
+      <workItem from="1708886044195" duration="30156000" />
+      <workItem from="1708926138288" duration="245000" />
+      <workItem from="1708963513749" duration="513000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with my standard boilerplate so people know that this was written par moi">
       <option name="closed" value="true" />
@@ -152,7 +149,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708921919457</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="scrambling to make my code more compatible with the input txt file">
+      <option name="closed" value="true" />
+      <created>1708924639835</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708924639835</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Whatever, barely works with the input file, might as well double down on making my code fancy like before&#10;¯\_(ツ)_/¯">
+      <option name="closed" value="true" />
+      <created>1708924930040</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1708924930040</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +181,8 @@
     <MESSAGE value="fixed read to take in variables from file, completed delete, modified create to return to main menu" />
     <MESSAGE value="edited create.bash, created and finished update.bash, edited delete.bash" />
     <MESSAGE value="completed total.bash, started enroll.bash" />
-    <option name="LAST_COMMIT_MESSAGE" value="completed total.bash, started enroll.bash" />
+    <MESSAGE value="scrambling to make my code more compatible with the input txt file" />
+    <MESSAGE value="Whatever, barely works with the input file, might as well double down on making my code fancy like before&#10;¯\_(ツ)_/¯" />
+    <option name="LAST_COMMIT_MESSAGE" value="Whatever, barely works with the input file, might as well double down on making my code fancy like before&#10;¯\_(ツ)_/¯" />
   </component>
 </project>

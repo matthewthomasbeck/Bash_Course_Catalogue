@@ -22,9 +22,9 @@
 
 ##### department code #####
 
-isValid=false # initialize as false
+valid=false # initialize as false
 
-while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
+while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
     echo "" # add space
 
@@ -37,7 +37,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
         dept_code=$input # take valid input from user
 
-        isValid=true # break the loop
+        valid=true # break the loop
 
     else # if input is not a valid 2-3 character string...
 
@@ -51,9 +51,9 @@ read -p "enter department name: " dept_name # ask for dept name and save
 
 ##### course number #####
 
-isValid=false # initialize as false
+valid=false # initialize as false
 
-while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
+while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
     read -p "Enter course number: " input # take input from user
 
@@ -61,7 +61,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
         course_num=$input # take valid input from user
 
-        isValid=true # break the loop
+        valid=true # break the loop
 
     else # if input is not a valid integer...
 
@@ -75,9 +75,9 @@ read -p "enter course name: " course_name # ask for course name and save
 
 ##### course schedule #####
 
-isValid=false # initialize as false
+valid=false # initialize as false
 
-while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
+while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
     read -p "Enter course schedule: " input # take input from user
 
@@ -88,7 +88,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
         course_sched=$input # take valid input from user
 
-        isValid=true # break the loop
+        valid=true # break the loop
 
     else # if input is not a valid schedule...
 
@@ -98,9 +98,9 @@ done
 
 ##### start date #####
 
-isValid=false # initialize as false
+valid=false # initialize as false
 
-while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
+while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
     read -p "Enter course start: " input # take input from user
 
@@ -108,7 +108,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
         start_date=$input # take valid input from user
 
-        isValid=true # break the loop
+        valid=true # break the loop
 
     else # if input is not a valid date string...
 
@@ -118,9 +118,9 @@ done
 
 ##### end date #####
 
-isValid=false # initialize as false
+valid=false # initialize as false
 
-while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
+while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
     read -p "Enter course start: " input # take input from user
 
@@ -128,7 +128,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
         end_date=$input # take valid input from user
 
-        isValid=true # break the loop
+        valid=true # break the loop
 
     else # if input is not a valid date string...
 
@@ -138,9 +138,9 @@ done
 
 ##### credit hours #####
 
-isValid=false # initialize as false
+valid=false # initialize as false
 
-while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
+while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
     read -p "Enter credit hours: " input # take input from user
 
@@ -148,7 +148,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
         credit_hours=$input # take valid input from user
 
-        isValid=true # break the loop
+        valid=true # break the loop
 
     else # if input is not a valid integer...
 
@@ -158,9 +158,9 @@ done
 
 ##### initial enrollment #####
 
-isValid=false # initialize as false
+valid=false # initialize as false
 
-while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
+while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
     read -p "Enter course enrollment: " input # take input from user
 
@@ -168,7 +168,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
         initial_enrollment=$input # take valid input from user
 
-        isValid=true # break the loop
+        valid=true # break the loop
 
     else # if input is not a valid integer...
 
@@ -185,16 +185,16 @@ if [ -e "$course_file" ]; then # if course has already been created...
 
     echo -e "\nERROR: course already exists\n" # print course created error statement
 
-    isValid=false # initialize as false
+    valid=false # initialize as false
 
-    while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
+    while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
         # ask for failure course of action
         read -p "Want to continue? (enter yes: (y, Y), no: (n, N)): " input
 
         if [[ "$input" =~ ^[yYnN]$ ]]; then # if user enters correct yes/no input of any kind...
 
-            isValid=true # break the loop
+            valid=true # break the loop
 
             case $input in # yes/no case (inspired by my work with switch statements in python for Receipt_Analyzer_3.0)
 
