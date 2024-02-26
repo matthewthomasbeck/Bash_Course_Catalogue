@@ -179,7 +179,7 @@ done
 
 ########## SEARCH FOR FILE ##########
 
-course_file="data/${dept_code}${course_num}.txt" # build file path needed for 'search engine' functionality
+course_file="data/${dept_code}${course_num}.crs" # build file path needed for 'search engine' functionality
 
 if [ -e "$course_file" ]; then # if course has already been created...
 
@@ -221,11 +221,9 @@ fi
 
 ##### create file #####
 
-course_file="${dept_code}${course_num}.crs" # declare file to store course data
-
 data_folder="data" # set directory to store file
 
-mkdir -p "$data_folder"  # make data directory to avoid annoying 'nO sUcH fIlE oR dIrEcToRy' bs
+mkdir -p "$data_folder"  # make data directory to avoid annoying 'nO sUcH fIlE oR dIrEcToRy'
 
 ##### fill file #####
 
@@ -238,7 +236,7 @@ echo -e "$dept_code $dept_name\n$course_name\n$course_sched $start_date $end_dat
 
 ##### export file #####
 
-mv "$course_file" "$data_folder/" # move course data file to data directory
+mv -f "$course_file" "$data_folder/" # move course data file to data directory and use -f to ignore any errors
 
 echo -e "\n" # print new line for legibility
 
