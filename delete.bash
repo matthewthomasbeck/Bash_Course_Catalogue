@@ -28,9 +28,10 @@ while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
     echo "" # add space to make good looking
 
-    read -p "Enter a department code and course number: " input # take input from user
+    read -p "Enter a department code and course number: " dept_code course_num # take input from user
 
     dept_code=$(echo "$dept_code" | tr '[:upper:]' '[:lower:]') # convert dept code to lowercase
+    # I attempted to use dept_code="${dept_code,,}" but could not get that to work
 
     # if both department code and course number are valid...
     if [[ "$dept_code" =~ ^[[:alnum:]]{2,3}$ ]] && [[ "$course_num" =~ ^[0-9]+$ && ${#course_num} -eq 4 ]]; then
