@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35575ed6-fd66-44a8-95cf-60f5ae43b539" name="Changes" comment="Created the menu and fiddled around with my comment boilerplate in each file">
+    <list default="true" id="35575ed6-fd66-44a8-95cf-60f5ae43b539" name="Changes" comment="Completed create (minus dealing with the .crs extension)">
+      <change afterPath="$PROJECT_DIR$/data/CS3824.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assign1.bash" beforeDir="false" afterPath="$PROJECT_DIR$/assign1.bash" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create.bash" beforeDir="false" afterPath="$PROJECT_DIR$/create.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delete.bash" beforeDir="false" afterPath="$PROJECT_DIR$/delete.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/enroll.bash" beforeDir="false" afterPath="$PROJECT_DIR$/enroll.bash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/CS1234.crs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/read.bash" beforeDir="false" afterPath="$PROJECT_DIR$/read.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/total.bash" beforeDir="false" afterPath="$PROJECT_DIR$/total.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/update.bash" beforeDir="false" afterPath="$PROJECT_DIR$/update.bash" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +43,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Shell Script.assign1.bash.executor": "Run",
+    "Shell Script.create.bash.executor": "Run",
+    "Shell Script.read.bash.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -63,7 +63,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708886043061</updated>
-      <workItem from="1708886044195" duration="9047000" />
+      <workItem from="1708886044195" duration="16351000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with my standard boilerplate so people know that this was written par moi">
       <option name="closed" value="true" />
@@ -97,7 +97,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708895717797</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Created input for create.bash, all of my filters work beautifully :)">
+      <option name="closed" value="true" />
+      <created>1708901287796</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708901287796</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Completed create (minus dealing with the .crs extension)">
+      <option name="closed" value="true" />
+      <created>1708905153238</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708905153238</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +123,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit with my standard boilerplate so people know that this was written par moi" />
     <MESSAGE value="Created the menu and fiddled around with my comment boilerplate in each file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created the menu and fiddled around with my comment boilerplate in each file" />
+    <MESSAGE value="Created input for create.bash, all of my filters work beautifully :)" />
+    <MESSAGE value="Completed create (minus dealing with the .crs extension)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed create (minus dealing with the .crs extension)" />
   </component>
 </project>

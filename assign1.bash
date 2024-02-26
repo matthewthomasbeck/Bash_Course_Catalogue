@@ -29,22 +29,23 @@ while true; do # display the menu until CTRL-D is pressed
 
     ##### print menu #####
 
-    echo "Enter one of the following actions or press CTRL-D to exit:" # ask user for option
+    echo "Enter one of the following actions or press CTRL-D to exit:" # ask user for input
     echo "C - create a new course record" # select c to call create.bash
     echo "R - read an existing course record" # select r to call read.bash
     echo "U - update an existing course record" # select u to call update.bash
     echo "D - delete an existing course record" # select d to call delete.bash
     echo "E - update enrolled student count of existing course" # select e to call enroll.bash
-    echo "T - show total course count" # select t to call total.bash
+    echo -e "T - show total course count\n" # select t to call total.bash
 
     ##### take user input #####
 
-    read -n 1 option # read single character input from user
-    echo ""  # move to next line for formatting
+    read -n 1 input # read single character input from user
 
-    ##### menu option functionality #####
+    echo ""  # move to next line for space
 
-    case $option in # create vase statement to display options
+    ##### menu input functionality #####
+
+    case $input in # create vase statement to display options
 
         C|c) # if user wants to create a course record...
 

@@ -26,6 +26,7 @@ isValid=false # initialize as false (functionality inspired by Dr. Gomez's Progr
 
 while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
+    echo ""  # add space
     read -p "Enter department code: " input # take input from user
 
     input=$(echo "$input" | tr '[:lower:]' '[:upper:]') # convert the string with unix utility to uppercase
@@ -38,7 +39,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
     else # if input is not a valid 2-3 character string...
 
-        echo "ERROR: please enter a two-to-three character long string" # throw invalid input error
+        echo -e "\nERROR: please enter a two-to-three character long string" # throw invalid input error
     fi
 done
 
@@ -62,7 +63,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
     else # if input is not a valid integer...
 
-        echo "ERROR: please enter a valid integer 4 numbers long" # throw invalid input error
+        echo -e "\nERROR: please enter a valid integer 4 numbers long" # throw invalid input error
     fi
 done
 
@@ -88,7 +89,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
     else # if input is not a valid schedule...
 
-        echo "ERROR: please enter a valid schedule (MWF or TH)" # throw invalid input error
+        echo -e "\nERROR: please enter a valid schedule (MWF or TH)" # throw invalid input error
     fi
 done
 
@@ -108,7 +109,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
     else # if input is not a valid date string...
 
-        echo "ERROR: please enter a valid end date (MM/DD/YYYY)" # throw invalid input error
+        echo -e "\nERROR: please enter a valid end date (MM/DD/YYYY)" # throw invalid input error
     fi
 done
 
@@ -128,7 +129,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
     else # if input is not a valid date string...
 
-        echo "ERROR: please enter a valid end date (MM/DD/YYYY)" # throw invalid input error
+        echo -e "\nERROR: please enter a valid end date (MM/DD/YYYY)" # throw invalid input error
     fi
 done
 
@@ -148,7 +149,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
     else # if input is not a valid integer...
 
-        echo "ERROR: please enter an unsigned integer" # throw invalid input error
+        echo -e "\nERROR: please enter an unsigned integer" # throw invalid input error
     fi
 done
 
@@ -168,7 +169,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
     else # if input is not a valid integer...
 
-        echo "ERROR: please enter an unsigned integer" # throw invalid input error
+        echo -e "\nERROR: please enter an unsigned integer" # throw invalid input error
     fi
 done
 
