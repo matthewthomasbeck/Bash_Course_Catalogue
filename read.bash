@@ -20,48 +20,30 @@
 
 ########## USER INPUT ##########
 
-##### dept_code code #####
+##### department code and course number #####
 
 isValid=false # initialize as false
 
 while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
-    echo "" # add space
+    echo "" # add space to make good looking
 
-    read -p "Enter department code: " input # take input from user
+    read -p "Enter a department code and course number: " input # take input from user
 
-    input=$(echo "$input" | tr '[:upper:]' '[:lower:]') # convert the string with unix utility to lowercase
-    # I attempted to use input="${input,,}" but could not get that to work
+    read dept_code course_num <<< "$input" # use here string to collect parameters
 
-    if [[ "$input" =~ ^[[:alnum:]]{2,3}$ ]]; then # if input is a valid 2-3 character string...
+    dept_code=$(echo "$dept_code" | tr '[:upper:]' '[:lower:]') # convert dept code to lowercase
 
-        dept_code=$input # take valid input from user
-
-        isValid=true # break the loop
-
-    else # if input is not a valid 2-3 character string...
-
-        echo -e "\nERROR: please enter a two-to-three character long string" # throw invalid input error
-    fi
-done
-
-##### course number #####
-
-isValid=false # initialize as false
-
-while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
-
-    read -p "Enter course number: " input # take input from user
-
-    if [[ "$input" =~ ^[0-9]+$ && ${#input} -eq 4 ]]; then # if input is a valid integer...
-
-        course_num=$input # take valid input from user
+    # if both department code and course number are valid...
+    if [[ "$dept_code" =~ ^[[:alnum:]]{2,3}$ ]] && [[ "$course_num" =~ ^[0-9]+$ && ${#course_num} -eq 4 ]]; then
 
         isValid=true # break the loop
 
-    else # if input is not a valid integer...
+    else # if either department code or course number is not valid...
 
-        echo -e "\nERROR: please enter a valid integer 4 numbers long" # throw invalid input error
+        # throw invalid input error
+        echo -e "\nERROR: Please enter a valid department code (2-3 characters) and a valid integer course number \
+        (4 numbers)."
     fi
 done
 

@@ -21,7 +21,8 @@
 
 ##### count students #####
 
-
+read # eat input until code finished
+read # eat input until code finished
 
 ##### print students #####
 

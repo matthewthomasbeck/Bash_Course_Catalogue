@@ -104,7 +104,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
     read -p "Enter course start: " input # take input from user
 
-    if [[ "$input" =~ ^[0-9]{2}/[0-9]{2}/[0-9]{4}$ ]]; then # if input valid date string...
+    if [[ "$input" =~ ^([0-9]{1,2}/){2}[0-9]{2}$ ]]; then # if input valid date string...
 
         start_date=$input # take valid input from user
 
@@ -112,7 +112,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
     else # if input is not a valid date string...
 
-        echo -e "\nERROR: please enter a valid end date (MM/DD/YYYY)" # throw invalid input error
+        echo -e "\nERROR: please enter a valid end date (MM/DD/YY)" # throw invalid input error
     fi
 done
 
@@ -124,7 +124,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
     read -p "Enter course start: " input # take input from user
 
-    if [[ "$input" =~ ^[0-9]{2}/[0-9]{2}/[0-9]{4}$ ]]; then # if input valid date string...
+    if [[ "$input" =~ ^([0-9]{1,2}/){2}[0-9]{2}$ ]]; then # if input valid date string...
 
         end_date=$input # take valid input from user
 
@@ -132,7 +132,7 @@ while [ "$isValid" == false ]; do # loop as long as the user keeps messing up
 
     else # if input is not a valid date string...
 
-        echo -e "\nERROR: please enter a valid end date (MM/DD/YYYY)" # throw invalid input error
+        echo -e "\nERROR: please enter a valid end date (MM/DD/YY)" # throw invalid input error
     fi
 done
 

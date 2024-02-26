@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# NOTE: I usually end my script files with the .sh extension out of habit, but refrained from doing that here, apologies
-# if I did something I am not supposed to; trying to memorize what I can and can not do yet is challenging, and
-# meticulously going through every slide in the lecture notes, while advisable, takes days (but I did try to follow the
-# instructions to a T)
-
 ################################################################################
 # This code and its associated files were created at the instruction of        #
 # professors at the University of Texas at San Antonio during my time as a     #
