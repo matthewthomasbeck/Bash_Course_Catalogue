@@ -17,4 +17,16 @@
 ############### STUDENT ENROLLMENT ###############
 ##################################################
 
-echo "enroll"
+########## COUNT TOTAL ENROLLMENT ##########
+
+##### count students #####
+
+
+
+##### print students #####
+
+
+
+##### return to main menu #####
+
+./assign1.bash # send user back to main menu

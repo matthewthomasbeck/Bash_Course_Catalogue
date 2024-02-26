@@ -17,4 +17,23 @@
 ############### TOTAL COURSES ###############
 #############################################
 
-echo "total"
+
+########## COUNT TOTAL COURSES ##########
+
+##### count courses #####
+
+data_path="data" # set path to data
+
+cd "$data_path" || exit # change to data directory or exit if failure
+
+course_count=$(ls -1 *.crs | wc -l) # list any .crs files and count lines
+
+##### print courses #####
+
+echo -e "\nTotal course records: $course_count\n" # print course count
+
+cd - || exit # return to prev dir or exit if failure
+
+##### return to main menu #####
+
+./assign1.bash # send user back to main menu
