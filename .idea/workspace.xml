@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35575ed6-fd66-44a8-95cf-60f5ae43b539" name="Changes" comment="Whatever, barely works with the input file, might as well double down on making my code fancy like before&#10;¯\_(ツ)_/¯">
+    <list default="true" id="35575ed6-fd66-44a8-95cf-60f5ae43b539" name="Changes" comment="removed the redundant yes|Yes and no|No that I had no time to remove earlier">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create.bash" beforeDir="false" afterPath="$PROJECT_DIR$/create.bash" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delete.bash" beforeDir="false" afterPath="$PROJECT_DIR$/delete.bash" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/read.bash" beforeDir="false" afterPath="$PROJECT_DIR$/read.bash" afterDir="false" />
@@ -67,7 +66,9 @@
       <updated>1708886043061</updated>
       <workItem from="1708886044195" duration="30156000" />
       <workItem from="1708926138288" duration="245000" />
-      <workItem from="1708963513749" duration="513000" />
+      <workItem from="1708963513749" duration="3357000" />
+      <workItem from="1708972905029" duration="1225000" />
+      <workItem from="1708984730923" duration="951000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with my standard boilerplate so people know that this was written par moi">
       <option name="closed" value="true" />
@@ -165,7 +166,31 @@
       <option name="project" value="LOCAL" />
       <updated>1708924930040</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="changed my valid variable to be more bash friendly (accidentally camel cased at the beginning, didn't bother changing it as I was low on time), wrote better README.md">
+      <option name="closed" value="true" />
+      <created>1708964100454</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1708964100454</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Typo in README.md">
+      <option name="closed" value="true" />
+      <created>1708964177760</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1708964177760</updated>
+    </task>
+    <task id="LOCAL-00015" summary="removed the redundant yes|Yes and no|No that I had no time to remove earlier">
+      <option name="closed" value="true" />
+      <created>1708968707389</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1708968707390</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +208,10 @@
     <MESSAGE value="completed total.bash, started enroll.bash" />
     <MESSAGE value="scrambling to make my code more compatible with the input txt file" />
     <MESSAGE value="Whatever, barely works with the input file, might as well double down on making my code fancy like before&#10;¯\_(ツ)_/¯" />
-    <option name="LAST_COMMIT_MESSAGE" value="Whatever, barely works with the input file, might as well double down on making my code fancy like before&#10;¯\_(ツ)_/¯" />
+    <MESSAGE value="changed my valid variable to be more bash friendly (accidentally camel cased at the beginning, didn't bother changing it as I was low on time), wrote better README.md" />
+    <MESSAGE value="Typo in README.md" />
+    <MESSAGE value="removed the redundant yes|Yes, no|No that I had no time to remove earlier" />
+    <MESSAGE value="removed the redundant yes|Yes and no|No that I had no time to remove earlier" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed the redundant yes|Yes and no|No that I had no time to remove earlier" />
   </component>
 </project>

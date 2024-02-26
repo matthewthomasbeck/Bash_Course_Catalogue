@@ -238,7 +238,7 @@ echo -e "$dept_code $dept_name\n$course_name\n$course_sched $start_date $end_dat
 
 mv -f "$course_file" "$data_folder/" # move course data file to data directory and use -f to ignore any errors
 
-echo -e "\n" # print new line for legibility
+echo "" # print new line for legibility
 
 ##### update log #####
 

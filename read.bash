@@ -28,10 +28,9 @@ while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
     echo "" # add space to make good looking
 
-    read -p "Enter a department code and course number: " input # take input from user
+    read -p "Enter a department code and course number: " dept_code course_num # take input from user
 
-    read dept_code course_num <<< "$input" # use here string to collect parameters
-
+    dept_code=${dept_code^^}
     dept_code=$(echo "$dept_code" | tr '[:upper:]' '[:lower:]') # convert dept code to lowercase
 
     # if both department code and course number are valid...
