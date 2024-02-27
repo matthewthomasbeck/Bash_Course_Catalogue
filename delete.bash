@@ -34,7 +34,7 @@ while [ "$valid" == false ]; do # loop as long as the user keeps messing up
     # I attempted to use dept_code="${dept_code,,}" but could not get that to work
 
     # if both department code and course number are valid...
-    if [[ "$dept_code" =~ ^[[:alnum:]]{2,3}$ ]] && [[ "$course_num" =~ ^[0-9]+$ && ${#course_num} -eq 4 ]]; then
+    if [[ "$dept_code" =~ ^[[:alnum:]]{2,3}$ && "$course_num" =~ ^[0-9]+$ && ${#course_num} -eq 4 ]]; then
 
         valid=true # break the loop
 
@@ -55,69 +55,71 @@ if [ ! -e "$course_file" ]; then # if file has not been found...
 
     echo -e "\nERROR: course not found\n" # print course not found error statement
 
-    valid=false # initialize as false
+    exit 0 # close process and return to menu (added for the simple version)
 
-    while [ "$valid" == false ]; do # loop as long as the user keeps messing up
+    #valid=false # initialize as false (removed for the simple version)
+
+    #while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
         # ask for failure course of action
-        read -p "Want to continue? (enter yes: (y, Y), no: (n, N)): " input
+        #read -p "Want to continue? (enter yes: (y, Y), no: (n, N)): " input
 
-        if [[ "$input" =~ ^[yYnN]$ ]]; then # if user enters correct yes/no input of any kind...
+        #if [[ "$input" =~ ^[yYnN]$ ]]; then # if user enters correct yes/no input of any kind...
 
-            valid=true # break the loop
+            #valid=true # break the loop
 
-            case $input in # yes/no case (inspired by my work with switch statements in python for Receipt_Analyzer_3.0)
+            #case $input in # yes/no case (inspired by my work with switch statements in python for Receipt_Analyzer_3.0)
 
-                y|Y) # if user selects yes...
+                #y|Y) # if user selects yes...
 
-                    ./read.bash # recursively call the script to restart the process
-                    ;;
+                    #./read.bash # recursively call the script to restart the process
+                    #;;
 
-                n|N) # if user selects no...
+                #n|N) # if user selects no...
 
-                    ./assign1.bash # send user back to main menu
-                    ;;
-            esac
+                    #./assign1.bash # send user back to main menu
+                    #;;
+            #esac
 
-        else # if user doess not enter correct yes/no input...
+        #else # if user doess not enter correct yes/no input...
 
-            echo -e "\nERROR: invalid input (enter yes: (y, Y), no: (n, N))\n" # print error statement
-        fi
-    done
+            #echo -e "\nERROR: invalid input (enter yes: (y, Y), no: (n, N))\n" # print error statement
+        #fi
+    #done
 
-else # if file has been found...
+#else # if file has been found... (removed for the simple version)
 
-    valid=false # initialize as false
+    #valid=false # initialize as false
 
-    while [ "$valid" == false ]; do # loop as long as the user keeps messing up
+    #while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
-        echo "" # add space
+        #echo "" # add space
 
         # ask for deletion course of action
-        read -p "Course found, are you sure you want to delete? (enter yes: (y, Y), no: (n, N)): " input
+        #read -p "Course found, are you sure you want to delete? (enter yes: (y, Y), no: (n, N)): " input
 
-        if [[ "$input" =~ ^[yYnN]$ ]]; then # if user enters correct yes/no input of any kind...
+        #if [[ "$input" =~ ^[yYnN]$ ]]; then # if user enters correct yes/no input of any kind...
 
-            valid=true # break the loop
+            #valid=true # break the loop
 
-            case $input in # yes/no case (inspired by my work with switch statements in python for Receipt_Analyzer_3.0)
+            #case $input in # yes/no case (inspired by my work with switch statements in python for Receipt_Analyzer_3.0)
 
-                y|Y) # if user selects yes...
+                #y|Y) # if user selects yes...
 
-                    echo -e "\nDeleted $course_file\n" # print course deletion statement
-                    ;;
+                    #echo -e "\nDeleted $course_file\n" # print course deletion statement
+                    #;;
 
-                n|N) # if user selects no...
+                #n|N) # if user selects no...
 
-                    exit 0 # close process
-                    ;;
-            esac
+                    #exit 0 # close process
+                    #;;
+            #esac
 
-        else # if user doess not enter correct yes/no input...
+        #else # if user doess not enter correct yes/no input...
 
-            echo -e "\nERROR: invalid input (enter yes: (y, Y), no: (n, N))\n" # print error statement
-        fi
-    done
+            #echo -e "\nERROR: invalid input (enter yes: (y, Y), no: (n, N))\n" # print error statement
+        #fi
+    #done
 fi
 
 
@@ -133,7 +135,7 @@ while read; do # loop through the entire contents of the course file
     read # pass
     read # pass
 
-done < "$course_file"
+done < "$course_file" # read from course file
 
 
 ########## DELETE FILE ##########

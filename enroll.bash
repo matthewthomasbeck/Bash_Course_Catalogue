@@ -34,7 +34,7 @@ while [ "$valid" == false ]; do # loop as long as the user keeps messing up
     # I attempted to use input="${input,,}" but could not get that to work
 
     # if both department code and course number are valid...
-    if [[ "$dept_code" =~ ^[[:alnum:]]{2,3}$ ]] && [[ "$course_num" =~ ^[0-9]+$ && ${#course_num} -eq 4 ]]; then
+    if [[ "$dept_code" =~ ^[[:alnum:]]{2,3}$ && "$course_num" =~ ^[0-9]+$ && ${#course_num} -eq 4 ]]; then
 
         valid=true # break the loop
 
@@ -120,7 +120,8 @@ while read line; do # loop through the entire contents of the course file
     read course_sched start_date end_date # take schedule start and end from third line
     read credit_hours # take hours from fourth line
     read initial_enrollment # take population from fifth line
-done < "$course_file"
+
+done < "$course_file" # read from course file
 
 
 ########## SET NEW VALUE ##########

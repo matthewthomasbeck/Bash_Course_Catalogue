@@ -186,52 +186,55 @@ if [ ! -e "$course_file" ]; then # if course has not been created...
 
     echo -e "\nERROR: course not found\n" # print course created error statement
 
-    valid=false # initialize as false
+    exit 0 # close process and return to menu (added for the simple version)
 
-    while [ "$valid" == false ]; do # loop as long as the user keeps messing up
+    #valid=false # initialize as false (removed for the simple version)
+
+    #while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
         # ask for failure course of action
-        read -p "Want to make a course instead? (enter yes: (y, Y), no: (n, N)): " input
+        #read -p "Want to make a course instead? (enter yes: (y, Y), no: (n, N)): " input
 
-        if [[ "$input" =~ ^[yYnN]$ ]]; then # if user enters correct yes/no input of any kind...
+        #if [[ "$input" =~ ^[yYnN]$ ]]; then # if user enters correct yes/no input of any kind...
 
-            valid=true # break the loop
+            #valid=true # break the loop
 
-            case $input in # yes/no case (inspired by my work with switch statements in python for Receipt_Analyzer_3.0)
+            #case $input in # yes/no case (inspired by my work with switch statements in python for Receipt_Analyzer_3.0)
 
-                y|Y) # if user selects yes...
+                #y|Y) # if user selects yes...
 
-                    echo -e "\nCreated $course_file\n" # print course creation statement
+                    #echo -e "\nCreated $course_file\n" # print course creation statement
 
-                    exit 0 # close process
-                    ;;
+                    #exit 0 # close process
+                    #;;
 
-                n|N) # if user selects no...
+                #n|N) # if user selects no...
 
-                    exit 0 # close process
-                    ;;
-            esac
+                    #exit 0 # close process
+                    #;;
+            #esac
 
-        else # if user doess not enter correct yes/no input...
+        #else # if user doess not enter correct yes/no input...
 
-            echo -e "\nERROR: invalid input (enter yes: (y, Y), no: (n, N))\n" # print error statement
-        fi
-    done
+            #echo -e "\nERROR: invalid input (enter yes: (y, Y), no: (n, N))\n" # print error statement
+        #fi
+    #done
 fi
 
 
 ########## READ OLD FILE ##########
 
-while read; do # loop through the entire contents of the course file
+while read line; do # loop through the entire contents of the course file
 
     ##### read old values #####
 
-    read _ old_dept_name # collect name but not department code
+    read _ old_dept_name <<< "$line" # collect name but not department code
     read # pass
     read old_course_sched old_start_date old_end_date # take schedule start and end from third line
     read old_credit_hours # take hours from fourth line
     read old_initial_enrollment # take population from fifth line
-done < "$course_file"
+
+done < "$course_file" # read from course file
 
 
 ########## SET NEW VALUES ##########

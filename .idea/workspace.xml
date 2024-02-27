@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35575ed6-fd66-44a8-95cf-60f5ae43b539" name="Changes" comment="added exits to close">
+    <list default="true" id="35575ed6-fd66-44a8-95cf-60f5ae43b539" name="Changes" comment="Worked on improving update.bash some more so it is more compatible with the input txt">
+      <change afterPath="$PROJECT_DIR$/a1Input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assign1.bash" beforeDir="false" afterPath="$PROJECT_DIR$/assign1.bash" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/cs3423.crs" beforeDir="false" afterPath="$PROJECT_DIR$/data/cs3423.crs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/queries.log" beforeDir="false" afterPath="$PROJECT_DIR$/data/queries.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delete.bash" beforeDir="false" afterPath="$PROJECT_DIR$/delete.bash" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/enroll.bash" beforeDir="false" afterPath="$PROJECT_DIR$/enroll.bash" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/read.bash" beforeDir="false" afterPath="$PROJECT_DIR$/read.bash" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/update.bash" beforeDir="false" afterPath="$PROJECT_DIR$/update.bash" afterDir="false" />
@@ -70,7 +73,7 @@
       <workItem from="1708926138288" duration="245000" />
       <workItem from="1708963513749" duration="3357000" />
       <workItem from="1708972905029" duration="1225000" />
-      <workItem from="1708984730923" duration="7520000" />
+      <workItem from="1708984730923" duration="17024000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with my standard boilerplate so people know that this was written par moi">
       <option name="closed" value="true" />
@@ -216,7 +219,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708990347516</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Completed enroll.bash, made minor changes to some files">
+      <option name="closed" value="true" />
+      <created>1708995575397</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1708995575397</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Worked on improving update.bash some more so it is more compatible with the input txt">
+      <option name="closed" value="true" />
+      <created>1709003111902</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1709003111902</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +259,8 @@
     <MESSAGE value="removed the redundant yes|Yes and no|No that I had no time to remove earlier" />
     <MESSAGE value="Attended Dr. Silvestro's office hours, received useful instruction to remove some parts of my code that were redundant like echo -e &quot;\n&quot; amongst other things" />
     <MESSAGE value="added exits to close" />
-    <option name="LAST_COMMIT_MESSAGE" value="added exits to close" />
+    <MESSAGE value="Completed enroll.bash, made minor changes to some files" />
+    <MESSAGE value="Worked on improving update.bash some more so it is more compatible with the input txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Worked on improving update.bash some more so it is more compatible with the input txt" />
   </component>
 </project>

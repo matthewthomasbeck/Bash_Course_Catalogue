@@ -38,9 +38,17 @@ while true; do # display the menu until CTRL-D is pressed
 
     echo ""  # move to next line for space
 
+    ##### check if exit #####
+
+    if [[ ! "$input" ]]; then # if user input empty (written specifically for use with .txt redirect)...
+
+        exit 0 # stop the program
+    fi
+
     ##### menu input functionality #####
 
-    case $input in # create vase statement to display options
+    # create vase statement to display options (case statements inspired by my use of switch statements in python)
+    case $input in
 
         C|c) # if user wants to create a course record...
 
