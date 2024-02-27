@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35575ed6-fd66-44a8-95cf-60f5ae43b539" name="Changes" comment="Worked on improving update.bash some more so it is more compatible with the input txt">
-      <change afterPath="$PROJECT_DIR$/a1Input.txt" afterDir="false" />
+    <list default="true" id="35575ed6-fd66-44a8-95cf-60f5ae43b539" name="Changes" comment="Returned code to original form with do-while loops checking for correct input as well as fixing some comment positioning and spelling">
+      <change afterPath="$PROJECT_DIR$/data/abc1234.crs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assign1.bash" beforeDir="false" afterPath="$PROJECT_DIR$/assign1.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cs3423.crs" beforeDir="false" afterPath="$PROJECT_DIR$/data/cs3423.crs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create.bash" beforeDir="false" afterPath="$PROJECT_DIR$/create.bash" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/queries.log" beforeDir="false" afterPath="$PROJECT_DIR$/data/queries.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delete.bash" beforeDir="false" afterPath="$PROJECT_DIR$/delete.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/enroll.bash" beforeDir="false" afterPath="$PROJECT_DIR$/enroll.bash" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/read.bash" beforeDir="false" afterPath="$PROJECT_DIR$/read.bash" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/update.bash" beforeDir="false" afterPath="$PROJECT_DIR$/update.bash" afterDir="false" />
     </list>
@@ -73,7 +71,7 @@
       <workItem from="1708926138288" duration="245000" />
       <workItem from="1708963513749" duration="3357000" />
       <workItem from="1708972905029" duration="1225000" />
-      <workItem from="1708984730923" duration="17024000" />
+      <workItem from="1708984730923" duration="18871000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with my standard boilerplate so people know that this was written par moi">
       <option name="closed" value="true" />
@@ -235,7 +233,31 @@
       <option name="project" value="LOCAL" />
       <updated>1709003111902</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Made completely all files compatible with entire specific a1input.txt redirect file">
+      <option name="closed" value="true" />
+      <created>1709008296633</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1709008296633</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Made all files completely compatible with entire specific a1input.txt redirect file">
+      <option name="closed" value="true" />
+      <created>1709008331420</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1709008331420</updated>
+    </task>
+    <task id="LOCAL-00023" summary="NOW I've Made all files completely compatible with entire specific a1input.txt redirect file">
+      <option name="closed" value="true" />
+      <created>1709008512251</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1709008512251</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +283,10 @@
     <MESSAGE value="added exits to close" />
     <MESSAGE value="Completed enroll.bash, made minor changes to some files" />
     <MESSAGE value="Worked on improving update.bash some more so it is more compatible with the input txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Worked on improving update.bash some more so it is more compatible with the input txt" />
+    <MESSAGE value="Made completely all files compatible with entire specific a1input.txt redirect file" />
+    <MESSAGE value="Made all files completely compatible with entire specific a1input.txt redirect file" />
+    <MESSAGE value="NOW I've Made all files completely compatible with entire specific a1input.txt redirect file" />
+    <MESSAGE value="Returned code to original form with do-while loops checking for correct input as well as fixing some comment positioning and spelling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Returned code to original form with do-while loops checking for correct input as well as fixing some comment positioning and spelling" />
   </component>
 </project>

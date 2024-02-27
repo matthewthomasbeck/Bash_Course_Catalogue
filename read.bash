@@ -54,39 +54,39 @@ if [ ! -e "$course_file" ]; then # if file has not been found...
 
     echo -e "\nERROR: course not found\n" # print course not found error statement
 
-    exit 0 # close process and return to menu (added for the simple version)
+    ###### loop below added for complex version #####
 
-    #valid=false # initialize as false (removed for the simple version)
+    valid=false # initialize as false
 
-    #while [ "$valid" == false ]; do # loop as long as the user keeps messing up
+    while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
         # ask for failure course of action
-        #read -p "Want to continue? (enter yes: (y, Y), no: (n, N)): " input
+        read -p "Want to continue? (enter yes: (y, Y), no: (n, N)): " input
 
-        #if [[ "$input" =~ ^[yYnN]$ ]]; then # if user enters correct yes/no input of any kind...
+        if [[ "$input" =~ ^[yYnN]$ ]]; then # if user enters correct yes/no input of any kind...
 
-            #valid=true # break the loop
+            valid=true # break the loop
 
-            #case $input in # yes/no case (inspired by my work with switch statements in python for Receipt_Analyzer_3.0)
+            case $input in # yes/no case (inspired by my work with switch statements in python for Receipt_Analyzer_3.0)
 
-                #y|Y) # if user selects yes...
+                y|Y) # if user selects yes...
 
-                    #./read.bash # recursively call the script to restart the process
+                    ./read.bash # recursively call the script to restart the process
 
-                    #exit 0 # close process
-                    #;;
+                    exit 0 # close process
+                    ;;
 
-                #n|N) # if user selects no...
+                n|N) # if user selects no...
 
-                    #exit 0 # close process
-                    #;;
-            #esac
+                    exit 0 # close process
+                    ;;
+            esac
 
-        #else # if user doess not enter correct yes/no input...
+        else # if user does not enter correct yes/no input...
 
-            #echo -e "\nERROR: invalid input (enter yes: (y, Y), no: (n, N))\n" # print error statement
-        #fi
-    #done
+            echo -e "\nERROR: invalid input (enter yes: (y, Y), no: (n, N))\n" # print error statement
+        fi
+    done
 fi
 
 ########## READ FILE ##########
