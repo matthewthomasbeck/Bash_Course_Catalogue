@@ -219,6 +219,25 @@ if [ ! -e "$course_file" ]; then # if course has not been created...
 fi
 
 
+########## READ OLD FILE ##########
+
+while read line; do # loop through the entire contents of the course file
+
+    ##### read old values #####
+
+    read old_dept_code old_dept_name <<< "$line" # take code and dept name from first line with here string
+    read old_course_name # take course name from second line
+    read old_course_sched old_start_date old_end_date # take schedule start and end from third line
+    read old_credit_hours # take hours from fourth line
+    read old_initial_enrollment # take population from fifth line
+done < "$course_file"
+
+
+########## SET NEW VALUES ##########
+
+
+
+
 ########## FILE OUTPUT ##########
 
 ##### create file #####

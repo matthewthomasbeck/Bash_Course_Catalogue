@@ -96,7 +96,7 @@ while read line; do # loop through the entire contents of the course file
 
     read dept_code dept_name <<< "$line" # take code and dept name from first line with here string
     read course_name # take course name from second line
-    read course_sched course_start course_end # take schedule start and end from third line
+    read course_sched start_date end_date # take schedule start and end from third line
     read credit_hours # take hours from fourth line
     read initial_enrollment # take population from fifth line
 
@@ -106,11 +106,10 @@ while read line; do # loop through the entire contents of the course file
     echo "Course number:    $course_num" # print class num
     echo "Course name:    $course_name" # print class name
     echo "Scheduled days:    $course_sched" # print days to go to class
-    echo "Course start:    $course_start" # print first class day
-    echo "Course end:    $course_end" # print last class day
+    echo "Course start:    $start_date" # print first class day
+    echo "Course end:    $end_date" # print last class day
     echo "Credits:    $credit_hours" # print credit hours
     echo -e "Capacity:    $initial_enrollment\n" # print num students
-
 done < "$course_file"
 
 ##### return to main menu #####
