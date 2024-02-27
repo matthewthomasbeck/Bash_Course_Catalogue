@@ -84,7 +84,8 @@ while [ "$valid" == false ]; do # loop as long as the user keeps messing up
     input=$(echo "$input" | tr '[:lower:]' '[:upper:]') # convert the string with unix utility to uppercase
     # I attempted to use input="${input^^}" but could not get that to work
 
-    if [[ "$input" == "MWF" || "$input" == "TH" ]]; then # if input is correct string MWF or TH...
+     # if input is correct string MWF or TH or empty...
+    if [[ "$input" == "MWF" || "$input" == "TH" || ! "$input" ]]; then
 
         course_sched=$input # take valid input from user
 
@@ -104,7 +105,7 @@ while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
     read -p "Enter course start: " input # take input from user
 
-    if [[ "$input" =~ ^([0-9]{1,2}/){2}[0-9]{2}$ ]]; then # if input valid date string...
+    if [[ "$input" =~ ^([0-9]{1,2}/){2}[0-9]{2}$ || ! "$input" ]]; then # if input valid date string or empty...
 
         start_date=$input # take valid input from user
 
@@ -124,7 +125,7 @@ while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
     read -p "Enter course start: " input # take input from user
 
-    if [[ "$input" =~ ^([0-9]{1,2}/){2}[0-9]{2}$ ]]; then # if input valid date string...
+    if [[ "$input" =~ ^([0-9]{1,2}/){2}[0-9]{2}$ || ! "$input" ]]; then # if input valid date string or empty...
 
         end_date=$input # take valid input from user
 
@@ -144,7 +145,7 @@ while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
     read -p "Enter credit hours: " input # take input from user
 
-    if [[ "$input" =~ ^[0-9]+$ ]]; then # if input is a valid integer...
+    if [[ "$input" =~ ^[0-9]+$ || ! "$input" ]]; then # if input is a valid integer or empty...
 
         credit_hours=$input # take valid input from user
 
@@ -164,7 +165,7 @@ while [ "$valid" == false ]; do # loop as long as the user keeps messing up
 
     read -p "Enter course enrollment: " input # take input from user
 
-    if [[ "$input" =~ ^[0-9]+$ ]]; then # if input is a valid integer...
+    if [[ "$input" =~ ^[0-9]+$ || ! "$input" ]]; then # if input is a valid integer or empty...
 
         initial_enrollment=$input # take valid input from user
 
@@ -221,12 +222,12 @@ fi
 
 ########## READ OLD FILE ##########
 
-while read line; do # loop through the entire contents of the course file
+while read; do # loop through the entire contents of the course file
 
     ##### read old values #####
 
-    read old_dept_code old_dept_name <<< "$line" # take code and dept name from first line with here string
-    read old_course_name # take course name from second line
+    read _ old_dept_name # collect name but not department code
+    read # pass
     read old_course_sched old_start_date old_end_date # take schedule start and end from third line
     read old_credit_hours # take hours from fourth line
     read old_initial_enrollment # take population from fifth line
@@ -235,7 +236,62 @@ done < "$course_file"
 
 ########## SET NEW VALUES ##########
 
+##### department name #####
 
+if [[ ! "$dept_name" ]]; then # if department name unchanged...
+
+    dept_name=$old_dept_name # use old value
+fi
+
+##### course schedule #####
+
+if [[ ! "$course_sched" ]]; then # if course schedule unchanged...
+
+    course_sched=$old_course_sched # use old value
+fi
+
+##### start date #####
+
+if [[ ! "$start_date" ]]; then # if start date unchanged...
+
+    start_date=$old_start_date # use old value
+fi
+
+##### end date #####
+
+if [[ ! "$end_date" ]]; then # if end date unchanged...
+
+    end_date=$old_end_date # use old value
+fi
+
+##### credit hours #####
+
+if [[ ! "$credit_hours" ]]; then # if credit hours unchanged...
+
+    credit_hours=$old_credit_hours # use old value
+fi
+
+##### initial enrollment #####
+
+if [[ ! "$initial_enrollment" ]]; then # if initial enrollment unchanged...
+
+    initial_enrollment=$old_initial_enrollment # use old value
+fi
+
+##### second method #####
+
+# in the first 2 lecture notes I could not find anything that had to do with eval, nor do I remember anything being
+# done like this during lecture (I could have missed it, though, but I do remember Dr. Silvestro using the @ operator
+# for going over a list in the second lecture notes), so this is how I would have preferred to do it
+#course_parameters=("dept_name" "course_sched" "start_date" "end_date" "credit_hours" "initial_enrollment")
+
+#for course_parameter in "${course_parameters[@]}"; do # loop through every course parameter
+
+    #if [[ ! "${!course_parameter}" ]]; then # if a parameter is empty...
+
+        #eval "$course_parameter=\$old_$course_parameter" # use old value for parameter as parameter
+    #fi
+#done
 
 
 ########## FILE OUTPUT ##########
