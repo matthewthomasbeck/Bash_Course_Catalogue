@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35575ed6-fd66-44a8-95cf-60f5ae43b539" name="Changes" comment="Returned code to original form with do-while loops checking for correct input as well as fixing some comment positioning and spelling">
-      <change afterPath="$PROJECT_DIR$/data/abc1234.crs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create.bash" beforeDir="false" afterPath="$PROJECT_DIR$/create.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/queries.log" beforeDir="false" afterPath="$PROJECT_DIR$/data/queries.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delete.bash" beforeDir="false" afterPath="$PROJECT_DIR$/delete.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/read.bash" beforeDir="false" afterPath="$PROJECT_DIR$/read.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/update.bash" beforeDir="false" afterPath="$PROJECT_DIR$/update.bash" afterDir="false" />
-    </list>
+    <list default="true" id="35575ed6-fd66-44a8-95cf-60f5ae43b539" name="Changes" comment="Returned code to original form with do-while loops checking for correct input as well as fixing some comment positioning and spelling" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +63,7 @@
       <workItem from="1708926138288" duration="245000" />
       <workItem from="1708963513749" duration="3357000" />
       <workItem from="1708972905029" duration="1225000" />
-      <workItem from="1708984730923" duration="18871000" />
+      <workItem from="1708984730923" duration="18905000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with my standard boilerplate so people know that this was written par moi">
       <option name="closed" value="true" />
@@ -257,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709008512251</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Returned code to original form with do-while loops checking for correct input as well as fixing some comment positioning and spelling">
+      <option name="closed" value="true" />
+      <created>1709010279926</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1709010279926</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
